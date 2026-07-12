@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Noteora — Notes & Handwriting, Done Right</title>
+  <meta name="description" content="Noteora is a private, offline note-taking app for typed notes and handwriting. Rich formatting, folders, PIN protection, and pixel-perfect PDF export. No account, no cloud, no cookies.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Noteora home">
+        <span class="mark" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 4.5C6 3.67 6.67 3 7.5 3H15l4.5 4.5V19.5c0 .83-.67 1.5-1.5 1.5h-11c-.83 0-1.5-.67-1.5-1.5v-15Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M15 3v4.5h4.5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M8.75 12h6.5M8.75 15h6.5M8.75 9h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </span>
+        Noteora
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" data-theme-toggle type="button" aria-label="Toggle dark mode">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5v2.3M12 19.2v2.3M21.5 12h-2.3M4.8 12H2.5M18.4 5.6l-1.6 1.6M7.2 16.8l-1.6 1.6M18.4 18.4l-1.6-1.6M7.2 7.2 5.6 5.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </button>
+        <a class="btn btn-primary" href="#download">Get the App</a>
+        <button class="nav-toggle" data-nav-toggle type="button" aria-label="Open menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================== HERO ============================== -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Notes &amp; Handwriting</span>
+          <h1>One app for everything you write.</h1>
+          <p class="hero-sub">
+            Type it or handwrite it — Noteora keeps rich formatting, folders, and privacy
+            in one calm, offline note-taking app that always looks exactly like the real page.
+          </p>
+
+          <div class="hero-actions" id="download">
+            <a class="store-badge" href="#" aria-label="Download Noteora on the App Store">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M16.365 1.43c0 1.14-.475 2.05-1.19 2.71-.79.73-1.86 1.29-2.9 1.2-.13-1.09.47-2.25 1.15-2.94.79-.8 2.02-1.38 2.94-1.4.02.14.001.28 0 .43ZM20.4 17.2c-.55 1.27-.82 1.83-1.53 2.95-.99 1.56-2.39 3.5-4.12 3.51-1.54.02-1.94-1-4.03-.99-2.1.01-2.53 1.01-4.07.99-1.73-.02-3.06-1.77-4.05-3.33-2.77-4.35-3.07-9.46-1.36-12.18C2.4 6.4 3.99 5.23 5.7 5.2c1.63-.03 2.65 1.1 4.03 1.1 1.37 0 2.35-1.1 4.03-1.06 1.75.03 2.9.83 3.83 2.26-3.37 1.85-2.82 6.36.81 7.7-.36 1.05-.6 1.6-1 2.0Z"/>
+              </svg>
+              <span class="store-text">
+                <small>Download on the</small>
+                <strong>App Store</strong>
+              </span>
+            </a>
+            <a class="btn btn-ghost" href="#features">See features</a>
+          </div>
+
+          <ul class="hero-meta">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3 4.5 6.5v5.2c0 4.4 3.1 8.3 7.5 9.3 4.4-1 7.5-4.9 7.5-9.3V6.5L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              PIN-protected notes
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 12a7.5 7.5 0 1 1 15 0 7.5 7.5 0 0 1-15 0Z" stroke="currentColor" stroke-width="1.6"/><path d="M4.5 12h15M12 4.5c1.8 2 2.8 4.8 2.8 7.5s-1 5.5-2.8 7.5c-1.8-2-2.8-4.8-2.8-7.5s1-5.5 2.8-7.5Z" stroke="currentColor" stroke-width="1.6"/></svg>
+              100% offline, no account
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4.5c0-.83.67-1.5 1.5-1.5H15l4.5 4.5v10.5c0 .83-.67 1.5-1.5 1.5h-11c-.83 0-1.5-.67-1.5-1.5v-13.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12.5h6M9 15.5h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              Pixel-perfect PDF export
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="mock-frame">
+            <div class="mock-card">
+              <div class="mock-title"></div>
+              <div class="mock-line w-100"></div>
+              <div class="mock-line w-90"></div>
+              <div class="mock-line w-70"></div>
+              <div class="mock-checklist">
+                <div class="mock-check-item">
+                  <span class="mock-check-box done"></span>
+                  <span class="mock-check-line" style="width:60%"></span>
+                </div>
+                <div class="mock-check-item">
+                  <span class="mock-check-box"></span>
+                  <span class="mock-check-line" style="width:80%"></span>
+                </div>
+                <div class="mock-check-item">
+                  <span class="mock-check-box"></span>
+                  <span class="mock-check-line" style="width:45%"></span>
+                </div>
+              </div>
+            </div>
+            <div class="mock-card-2">
+              <div class="pin-row">
+                <span class="pin-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="10.5" width="14" height="9" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="currentColor" stroke-width="1.6"/></svg>
+                </span>
+                <span class="pin-copy">
+                  <span class="t"></span>
+                  <span class="s"></span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== TRUST BAR ============================== -->
+    <section class="trust-bar">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 12a7.5 7.5 0 1 1 15 0 7.5 7.5 0 0 1-15 0Z" stroke="currentColor" stroke-width="1.6"/><path d="M4.5 12h15M12 4.5c1.8 2 2.8 4.8 2.8 7.5s-1 5.5-2.8 7.5c-1.8-2-2.8-4.8-2.8-7.5s1-5.5 2.8-7.5Z" stroke="currentColor" stroke-width="1.6"/></svg>
+          <div class="t">Fully Offline</div>
+          <div class="s">Your notes never leave your device</div>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="10.5" width="14" height="9" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="currentColor" stroke-width="1.6"/></svg>
+          <div class="t">PIN Protection</div>
+          <div class="s">Lock any note or folder individually</div>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v13.5M12 16.5 7.5 12M12 16.5 16.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17v2c0 .83.67 1.5 1.5 1.5h12c.83 0 1.5-.67 1.5-1.5v-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <div class="t">No Account Needed</div>
+          <div class="s">Open the app and start writing</div>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12.5 11 14.5 15.5 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 12a7.5 7.5 0 1 1 15 0 7.5 7.5 0 0 1-15 0Z" stroke="currentColor" stroke-width="1.6"/></svg>
+          <div class="t">No Cookies, Anywhere</div>
+          <div class="s">Not in the app, not on this website</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== FEATURES ============================== -->
+    <section id="features">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">Features</span>
+          <h2>Everything a notebook should do — and more</h2>
+          <p class="section-sub">Two ways to write, organized your way, and always ready to export.</p>
+        </div>
+
+        <div class="feature-grid">
+
+          <div class="feature-card">
+            <span class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4.5h9M6 9h12M6 13.5h12M6 18h7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Rich text editing</h3>
+            <p>Write like it's a real document, not a plain text box.</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Bold, italic, underline, and strikethrough</li>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Headings, bullet, numbered, and checklists</li>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Quotes, code blocks, links, and 9 fonts</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <span class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 20 5 15.7 15.5 5.2a2 2 0 0 1 2.8 0l.5.5a2 2 0 0 1 0 2.8L8.3 19 4 20Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Handwriting &amp; sketching</h3>
+            <p>A natural pen that feels right, on paper that fits your task.</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Smooth, pressure-sensitive pen strokes</li>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>7 templates: lined, grid, dotted, Cornell &amp; more</li>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Portrait or landscape pages</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <span class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="7" height="7" rx="1.4" stroke="currentColor" stroke-width="1.7"/><rect x="13" y="4" width="7" height="7" rx="1.4" stroke="currentColor" stroke-width="1.7"/><rect x="4" y="13" width="7" height="7" rx="1.4" stroke="currentColor" stroke-width="1.7"/><rect x="13" y="13" width="7" height="7" rx="1.4" stroke="currentColor" stroke-width="1.7"/></svg>
+            </span>
+            <h3>Documents, not just pages</h3>
+            <p>Long notes flow automatically, just like a word processor.</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Automatic multi-page pagination</li>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Continuous scroll or two-page book view</li>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Pinch to zoom, drag &amp; resize images</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <span class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 7.5c0-.83.67-1.5 1.5-1.5h4l1.5 2h9c.83 0 1.5.67 1.5 1.5v8c0 .83-.67 1.5-1.5 1.5H5c-.83 0-1.5-.67-1.5-1.5v-10Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Organize your way</h3>
+            <p>Structure grows with you, from a handful of notes to hundreds.</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Nested folders, pinned to the top</li>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Tags, favorites, and fast full-text search</li>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Reminders and deadlines on any note</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <span class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="10.5" width="14" height="9" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="currentColor" stroke-width="1.7"/></svg>
+            </span>
+            <h3>Privacy &amp; security</h3>
+            <p>Your notes are yours. Nothing here asks for your data.</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PIN-lock individual notes or whole folders</li>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Optional hint if you forget your PIN</li>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Local storage only — no cloud, no sync</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <span class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v13.5M12 16.5 7.5 12M12 16.5 16.5 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17v2c0 .83.67 1.5 1.5 1.5h12c.83 0 1.5-.67 1.5-1.5v-2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Export &amp; share</h3>
+            <p>What you see is exactly what you get, on paper or on screen.</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Pixel-perfect PDF export, typed or handwritten</li>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Plain text export for quick sharing</li>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Export the whole note or just selected pages</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== SPOTLIGHT ============================== -->
+    <section>
+      <div class="container">
+
+        <div class="spotlight-row">
+          <div class="spotlight-copy">
+            <span class="eyebrow">Precision Export</span>
+            <h3>What you see is what gets exported.</h3>
+            <p>
+              Noteora lays out every note on a fixed A4 page, so margins, line breaks, and
+              list formatting stay identical from screen to PDF — in portrait or landscape,
+              on any device.
+            </p>
+            <ul>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Font size and layout never shift between devices
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Headings, lists, and quotes carry over exactly as styled
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Handwritten pages export with the same precision
+              </li>
+            </ul>
+          </div>
+          <div class="spotlight-visual">
+            <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="4" y="4" width="192" height="252" rx="10" fill="none" stroke="var(--color-border)" stroke-width="2"/>
+              <rect x="24" y="28" width="90" height="10" rx="3" fill="var(--color-fg)" opacity="0.85"/>
+              <rect x="24" y="52" width="152" height="7" rx="3" fill="var(--color-border)"/>
+              <rect x="24" y="67" width="140" height="7" rx="3" fill="var(--color-border)"/>
+              <rect x="24" y="82" width="120" height="7" rx="3" fill="var(--color-border)"/>
+              <circle cx="28" cy="106" r="3" fill="var(--color-primary)"/>
+              <rect x="38" y="103" width="110" height="7" rx="3" fill="var(--color-border)"/>
+              <circle cx="28" cy="122" r="3" fill="var(--color-primary)"/>
+              <rect x="38" y="119" width="130" height="7" rx="3" fill="var(--color-border)"/>
+              <circle cx="28" cy="138" r="3" fill="var(--color-primary)"/>
+              <rect x="38" y="135" width="90" height="7" rx="3" fill="var(--color-border)"/>
+              <rect x="24" y="160" width="3" height="40" fill="var(--color-primary)"/>
+              <rect x="34" y="162" width="142" height="7" rx="3" fill="var(--color-border)"/>
+              <rect x="34" y="177" width="120" height="7" rx="3" fill="var(--color-border)"/>
+              <rect x="34" y="192" width="100" height="7" rx="3" fill="var(--color-border)"/>
+              <rect x="24" y="220" width="152" height="18" rx="4" fill="none" stroke="var(--color-primary)" stroke-width="1.6" stroke-dasharray="3 3"/>
+              <text x="100" y="232" text-anchor="middle" font-size="9" font-family="Inter, sans-serif" fill="var(--color-primary)" font-weight="600">PDF · A4 · exact match</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="spotlight-row reverse">
+          <div class="spotlight-copy">
+            <span class="eyebrow">Two Ways To Write</span>
+            <h3>Type when you're fast. Handwrite when you're thinking.</h3>
+            <p>
+              Switch freely between structured typed notes and free-form handwriting —
+              in the same folder, side by side, whichever fits the moment.
+            </p>
+            <ul>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Rich text notes with full formatting control
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Pressure-sensitive handwriting with 7 page styles
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Light, dark, or system-matched theme for either
+              </li>
+            </ul>
+          </div>
+          <div class="spotlight-visual">
+            <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="4" y="4" width="90" height="252" rx="10" fill="none" stroke="var(--color-border)" stroke-width="2"/>
+              <rect x="18" y="24" width="62" height="8" rx="3" fill="var(--color-fg)" opacity="0.85"/>
+              <rect x="18" y="46" width="62" height="6" rx="3" fill="var(--color-border)"/>
+              <rect x="18" y="58" width="50" height="6" rx="3" fill="var(--color-border)"/>
+              <rect x="18" y="70" width="56" height="6" rx="3" fill="var(--color-border)"/>
+              <rect x="18" y="88" width="62" height="6" rx="3" fill="var(--color-border)"/>
+              <rect x="18" y="100" width="40" height="6" rx="3" fill="var(--color-border)"/>
+              <rect x="106" y="4" width="90" height="252" rx="10" fill="none" stroke="var(--color-primary)" stroke-width="2"/>
+              <path d="M124 40q10-14 20-4t18-8 16 6" stroke="var(--color-primary)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+              <path d="M120 66q22-10 34 2t32-6" stroke="var(--color-primary)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+              <path d="M126 92q16 8 28-2t26 4" stroke="var(--color-primary)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+              <line x1="118" y1="130" x2="184" y2="130" stroke="var(--color-border)" stroke-width="1.4"/>
+              <line x1="118" y1="150" x2="184" y2="150" stroke="var(--color-border)" stroke-width="1.4"/>
+              <line x1="118" y1="170" x2="184" y2="170" stroke="var(--color-border)" stroke-width="1.4"/>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================== PRIVACY ============================== -->
+    <section id="privacy">
+      <div class="container">
+        <div class="privacy-banner">
+          <span class="privacy-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3 4.5 6.5v5.2c0 4.4 3.1 8.3 7.5 9.3 4.4-1 7.5-4.9 7.5-9.3V6.5L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9.2 12.3 11.2 14.3 15 10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div>
+            <h3>Built to keep your notes private, by default.</h3>
+            <p>
+              Noteora stores everything locally on your device using on-device storage only.
+              There's no account, no cloud sync, and no server that ever sees your notes.
+              Lock any note or folder with its own PIN for an extra layer of protection.
+              This website works the same way — no cookies, no analytics, no tracking.
+              Read the full <a href="privacy.html" style="color: var(--color-primary); text-decoration: underline;">Privacy Policy</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== FINAL CTA ============================== -->
+    <section class="final-cta">
+      <div class="container">
+        <span class="eyebrow">Get Started</span>
+        <h2>Your notebook, reinvented.</h2>
+        <p class="section-sub">Free to download. No account required. Available on the App Store.</p>
+        <div class="hero-actions">
+          <a class="store-badge" href="#" aria-label="Download Noteora on the App Store">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M16.365 1.43c0 1.14-.475 2.05-1.19 2.71-.79.73-1.86 1.29-2.9 1.2-.13-1.09.47-2.25 1.15-2.94.79-.8 2.02-1.38 2.94-1.4.02.14.001.28 0 .43ZM20.4 17.2c-.55 1.27-.82 1.83-1.53 2.95-.99 1.56-2.39 3.5-4.12 3.51-1.54.02-1.94-1-4.03-.99-2.1.01-2.53 1.01-4.07.99-1.73-.02-3.06-1.77-4.05-3.33-2.77-4.35-3.07-9.46-1.36-12.18C2.4 6.4 3.99 5.23 5.7 5.2c1.63-.03 2.65 1.1 4.03 1.1 1.37 0 2.35-1.1 4.03-1.06 1.75.03 2.9.83 3.83 2.26-3.37 1.85-2.82 6.36.81 7.7-.36 1.05-.6 1.6-1 2.0Z"/>
+            </svg>
+            <span class="store-text">
+              <small>Download on the</small>
+              <strong>App Store</strong>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Noteora home">
+            <span class="mark" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 4.5C6 3.67 6.67 3 7.5 3H15l4.5 4.5V19.5c0 .83-.67 1.5-1.5 1.5h-11c-.83 0-1.5-.67-1.5-1.5v-15Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M15 3v4.5h4.5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M8.75 12h6.5M8.75 15h6.5M8.75 9h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </span>
+            Noteora
+          </a>
+          <p>Typed notes and handwriting, organized and private, in one calm app.</p>
+        </div>
+
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#privacy">Privacy first</a></li>
+              <li><a href="#download">Download</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="mailto:info@perfectaistudio.com">info@perfectaistudio.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2026</span> Noteora. All rights reserved.</span>
+        <span>No cookies. No tracking. No account required.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
