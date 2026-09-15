@@ -4,8 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Google Analytics (G-SMHZQRF6VY) is loaded by js/main.js only after
-       the visitor accepts analytics in the cookie banner. -->
+  <!-- Google tag (gtag.js) with Consent Mode v2.
+       The tag loads on every page so it is detectable, but every storage
+       signal defaults to "denied": no cookies are written and no identifiers
+       are stored until the visitor accepts in the cookie banner (js/main.js).
+       This inline block MUST stay above the gtag.js loader below. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      personalization_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+
+    /* Re-apply a choice this visitor already made on an earlier visit. */
+    try {
+      if (localStorage.getItem('noteora-analytics-consent') === 'granted') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+    } catch (e) { /* storage blocked — stay denied */ }
+
+    gtag('js', new Date());
+    gtag('config', 'G-SMHZQRF6VY', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SMHZQRF6VY"></script>
   <title>Privacy Policy — Noteora</title>
   <meta name="description" content="Noteora's Privacy Policy. Your notes are stored only on your device. No account, no cloud sync, and no analytics SDKs in the app.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -107,11 +137,22 @@
         </p>
 
         <h2>5. Device permissions</h2>
-        <p>The App may request the following device permissions, used solely for the features you actively use:</p>
+        <p>
+          The App requests the minimum it needs to work as a notebook, and only for the feature
+          you are actively using:
+        </p>
         <ul>
-          <li><strong>Photo library access</strong> — to let you insert an existing image into a note.</li>
-          <li><strong>Camera access</strong> — to let you take a photo and insert it into a note.</li>
+          <li>
+            <strong>Photo library access</strong> — to let you insert an existing image into a
+            note. On Android this is the equivalent permission to read images from your gallery.
+          </li>
         </ul>
+        <p>
+          That is the complete list, on both platforms. The App does <strong>not</strong> request
+          camera, location, contacts, calendar, or microphone access, and it never presents an App
+          Tracking Transparency prompt or reads your advertising identifier. It also ships without
+          any networking code, so it has no network access to give away in the first place.
+        </p>
         <p>
           Images you insert are stored locally alongside your note and are handled the same way
           as all other note content described in Section 2.
@@ -129,13 +170,17 @@
 
         <h2 id="cookies">7. This website, analytics, and cookies</h2>
         <p>
-          <strong>The Site</strong> can use <strong>Google Analytics 4</strong> (provided by
-          Google LLC) to understand how many people visit these pages and which pages they find
-          useful, so we can improve them. <strong>Analytics only runs if you accept it.</strong>
-          On your first visit we ask with a banner at the bottom of the page; until you choose
-          "Accept", no analytics script is loaded and no analytics cookies are set. If you accept,
-          Google Analytics sets cookies in your browser and processes a limited set of technical
-          information: a randomly generated visitor
+          <strong>The Site</strong> uses <strong>Google Analytics 4</strong> (provided by Google
+          LLC) to understand how many people visit these pages and which pages they find useful,
+          so we can improve them. It runs in Google's <strong>Consent Mode v2</strong>, which
+          means every storage permission starts switched off. On your first visit we ask with a
+          banner at the bottom of the page. <strong>Until you choose "Accept", nothing is stored
+          in your browser:</strong> no analytics cookies are written and no identifier is kept,
+          so you are not recognisable between visits or across pages. In that state Google
+          receives only an anonymous, cookieless signal that a page was viewed, which it uses to
+          estimate aggregate traffic. Advertising features and advertising data are switched off
+          and redacted in both states. If you choose "Accept", Google Analytics sets cookies in
+          your browser and processes a limited set of technical information: a randomly generated visitor
           identifier, the pages you view, referring links, approximate location derived from your
           IP address (which Google truncates and does not store), your device type, browser, and
           operating system.
@@ -152,8 +197,8 @@
           <strong>Changing your mind.</strong> Your choice is remembered in your browser's local
           storage on this device — not in a cookie, and it is never transmitted anywhere. You can
           change it at any time through the <a href="#cookie-banner" data-cookie-settings>Cookie
-          settings</a> link in the footer of every page. Choosing "Decline" stops analytics from
-          loading and clears any analytics cookies that were previously set. You can also block
+          settings</a> link in the footer of every page. Choosing "Decline" switches analytics
+          storage back off and clears any analytics cookies that were previously set. You can also block
           analytics cookies through your browser settings, use a content blocker, or install
           Google's official
           <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google
@@ -205,11 +250,7 @@
         <div class="footer-brand">
           <a class="brand" href="index.html" aria-label="Noteora home">
             <span class="mark" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 4.5C6 3.67 6.67 3 7.5 3H15l4.5 4.5V19.5c0 .83-.67 1.5-1.5 1.5h-11c-.83 0-1.5-.67-1.5-1.5v-15Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                <path d="M15 3v4.5h4.5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                <path d="M8.75 12h6.5M8.75 15h6.5M8.75 9h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-              </svg>
+              <img src="assets/logo-icon.png" alt="" width="32" height="32">
             </span>
             Noteora
           </a>

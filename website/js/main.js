@@ -91,15 +91,16 @@
 
 
   /* ------------------------------------------------------------------
-   * Cookie consent + Google Analytics
-   * GA is NOT loaded until the visitor explicitly accepts. The choice is
-   * kept in localStorage (a first-party value on this device), never in a
-   * cookie, and is never sent anywhere.
+   * Cookie consent (Google Consent Mode v2)
+   * The Google tag itself is loaded in <head> on every page, but every
+   * storage signal starts as "denied" there. Nothing is written to the
+   * browser until the visitor accepts below, at which point we send a
+   * consent update rather than injecting a second tag.
+   * The choice is kept in localStorage (a first-party value on this
+   * device), never in a cookie, and is never transmitted anywhere.
    * ------------------------------------------------------------------ */
   var CONSENT_KEY = 'noteora-analytics-consent';
-  var GA_ID = 'G-SMHZQRF6VY';
   var banner = document.querySelector('[data-cookie-banner]');
-  var gaLoaded = false;
 
   function readConsent() {
     try {
@@ -117,19 +118,11 @@
     }
   }
 
-  function loadAnalytics() {
-    if (gaLoaded || !GA_ID) return;
-    gaLoaded = true;
-
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', GA_ID, { anonymize_ip: true });
-
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_ID);
-    document.head.appendChild(tag);
+  function updateConsent(granted) {
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('consent', 'update', {
+      analytics_storage: granted ? 'granted' : 'denied'
+    });
   }
 
   function clearAnalyticsCookies() {
@@ -162,17 +155,13 @@
   }
 
   function decide(value, returnFocusTo) {
+    var granted = value === 'granted';
     writeConsent(value);
-    if (value === 'granted') {
-      loadAnalytics();
-    } else {
-      clearAnalyticsCookies();
-    }
+    updateConsent(granted);
+    if (!granted) clearAnalyticsCookies();
     hideBanner();
     if (returnFocusTo && typeof returnFocusTo.focus === 'function') returnFocusTo.focus();
   }
-
-  if (readConsent() === 'granted') loadAnalytics();
 
   if (banner) {
     var accept = banner.querySelector('[data-cookie-accept]');
