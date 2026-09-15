@@ -58,19 +58,141 @@
     });
   }
 
-  // The App Store badges are placeholders (href="#") until the app ships and
-  // a real App Store URL is wired in. Clicking a real "#" link jumps the page
-  // to the top, appends "#" to the URL, and — because :focus-visible treats
-  // links conservatively — leaves a focus ring stuck on the badge after the
-  // click. None of that is meaningful for a placeholder, so we stop it here.
-  // Tab-key focus (real keyboard navigation) is untouched: the ring still
-  // shows while tabbing, exactly as it should. Once href is replaced with a
-  // real URL this selector stops matching and normal navigation resumes
-  // automatically — no further edit needed here.
-  document.querySelectorAll('.store-badge[href="#"]').forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      link.blur();
+
+  /* Screenshot rail — arrow buttons alongside native scroll/swipe. */
+  var rail = document.querySelector('[data-shots-rail]');
+  if (rail) {
+    var prev = document.querySelector('[data-shots-prev]');
+    var next = document.querySelector('[data-shots-next]');
+
+    function step() {
+      var card = rail.querySelector('.shot');
+      if (!card) return rail.clientWidth;
+      var gap = parseFloat(getComputedStyle(rail).columnGap) || 0;
+      return card.getBoundingClientRect().width + gap;
+    }
+
+    function scrollBy(dir) {
+      rail.scrollBy({ left: dir * step(), behavior: 'smooth' });
+    }
+
+    function syncButtons() {
+      var max = rail.scrollWidth - rail.clientWidth - 1;
+      if (prev) prev.disabled = rail.scrollLeft <= 0;
+      if (next) next.disabled = rail.scrollLeft >= max;
+    }
+
+    if (prev) prev.addEventListener('click', function () { scrollBy(-1); });
+    if (next) next.addEventListener('click', function () { scrollBy(1); });
+    rail.addEventListener('scroll', syncButtons, { passive: true });
+    window.addEventListener('resize', syncButtons);
+    syncButtons();
+  }
+
+
+  /* ------------------------------------------------------------------
+   * Cookie consent + Google Analytics
+   * GA is NOT loaded until the visitor explicitly accepts. The choice is
+   * kept in localStorage (a first-party value on this device), never in a
+   * cookie, and is never sent anywhere.
+   * ------------------------------------------------------------------ */
+  var CONSENT_KEY = 'noteora-analytics-consent';
+  var GA_ID = 'G-SMHZQRF6VY';
+  var banner = document.querySelector('[data-cookie-banner]');
+  var gaLoaded = false;
+
+  function readConsent() {
+    try {
+      return localStorage.getItem(CONSENT_KEY);
+    } catch (e) {
+      return null; /* storage blocked — treat as "not decided", never assume consent */
+    }
+  }
+
+  function writeConsent(value) {
+    try {
+      localStorage.setItem(CONSENT_KEY, value);
+    } catch (e) {
+      /* ignore — the choice simply won't persist to the next visit */
+    }
+  }
+
+  function loadAnalytics() {
+    if (gaLoaded || !GA_ID) return;
+    gaLoaded = true;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', GA_ID, { anonymize_ip: true });
+
+    var tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_ID);
+    document.head.appendChild(tag);
+  }
+
+  function clearAnalyticsCookies() {
+    /* If consent is withdrawn, drop any _ga / _gid cookies already set. */
+    var host = location.hostname;
+    var domains = ['', host, '.' + host];
+    var parts = host.split('.');
+    if (parts.length > 2) domains.push('.' + parts.slice(-2).join('.'));
+
+    document.cookie.split(';').forEach(function (entry) {
+      var name = entry.split('=')[0].trim();
+      if (name.indexOf('_ga') !== 0 && name !== '_gid') return;
+      domains.forEach(function (domain) {
+        document.cookie = name + '=; Max-Age=0; path=/' + (domain ? '; domain=' + domain : '');
+      });
     });
-  });
+  }
+
+  function showBanner() {
+    if (!banner) return;
+    banner.hidden = false;
+    /* Let the element paint before animating it in. */
+    requestAnimationFrame(function () { banner.classList.add('is-visible'); });
+  }
+
+  function hideBanner() {
+    if (!banner) return;
+    banner.classList.remove('is-visible');
+    banner.hidden = true;
+  }
+
+  function decide(value, returnFocusTo) {
+    writeConsent(value);
+    if (value === 'granted') {
+      loadAnalytics();
+    } else {
+      clearAnalyticsCookies();
+    }
+    hideBanner();
+    if (returnFocusTo && typeof returnFocusTo.focus === 'function') returnFocusTo.focus();
+  }
+
+  if (readConsent() === 'granted') loadAnalytics();
+
+  if (banner) {
+    var accept = banner.querySelector('[data-cookie-accept]');
+    var decline = banner.querySelector('[data-cookie-decline]');
+    var reopenSource = null;
+
+    if (accept) accept.addEventListener('click', function () { decide('granted', reopenSource); });
+    if (decline) decline.addEventListener('click', function () { decide('denied', reopenSource); });
+
+    if (!readConsent()) showBanner();
+
+    /* "Cookie settings" links let visitors change their mind at any time. */
+    document.querySelectorAll('[data-cookie-settings]').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        reopenSource = link;
+        showBanner();
+        if (accept) accept.focus();
+      });
+    });
+  }
+
 })();

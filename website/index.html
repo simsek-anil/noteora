@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Analytics (G-SMHZQRF6VY) is loaded by js/main.js only after
+       the visitor accepts analytics in the cookie banner. -->
   <title>Noteora — Notes & Handwriting, Done Right</title>
-  <meta name="description" content="Noteora is a private, offline note-taking app for typed notes and handwriting. Rich formatting, folders, PIN protection, and pixel-perfect PDF export. No account, no cloud, no cookies.">
+  <meta name="description" content="Noteora is a private, offline note-taking app for typed notes and handwriting. Rich formatting, folders, PIN protection, and pixel-perfect PDF export. No account, no cloud sync, no tracking in the app.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -32,6 +35,7 @@
       </a>
 
       <nav class="nav-links" aria-label="Primary">
+        <a href="#showcase">Screens</a>
         <a href="#features">Features</a>
         <a href="#privacy">Privacy</a>
       </nav>
@@ -41,7 +45,7 @@
           <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5v2.3M12 19.2v2.3M21.5 12h-2.3M4.8 12H2.5M18.4 5.6l-1.6 1.6M7.2 16.8l-1.6 1.6M18.4 18.4l-1.6-1.6M7.2 7.2 5.6 5.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
         </button>
-        <a class="btn btn-primary" href="#download">Get the App</a>
+        <a class="btn btn-primary" href="https://apps.apple.com/us/app/noteora-notes-handwriting/id6770675530" target="_blank" rel="noopener noreferrer">Get the App</a>
         <button class="nav-toggle" data-nav-toggle type="button" aria-label="Open menu" aria-expanded="false">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
         </button>
@@ -63,7 +67,7 @@
           </p>
 
           <div class="hero-actions" id="download">
-            <a class="store-badge" href="#" aria-label="Download Noteora on the App Store">
+            <a class="store-badge" href="https://apps.apple.com/us/app/noteora-notes-handwriting/id6770675530" target="_blank" rel="noopener noreferrer" aria-label="Download Noteora on the App Store">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.983 3.935-.983 1.831 0 2.35.983 3.96.955 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zm3.593-3.257c.837-1.013 1.4-2.427 1.245-3.831-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.336-1.273 3.714 1.338.104 2.715-.688 3.559-1.701z"/>
               </svg>
@@ -129,6 +133,93 @@
       </div>
     </section>
 
+
+    <!-- ============================== SHOWCASE ============================== -->
+    <section id="showcase" class="showcase">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">A Look Inside</span>
+          <h2>See Noteora in action</h2>
+          <p class="section-sub">Real screens from the app — the editor, the pen, your folders, and the export panel.</p>
+        </div>
+
+        <div class="shots">
+          <div class="shots-rail" data-shots-rail tabindex="0" role="group" aria-label="App screenshots, scroll horizontally to browse">
+
+            <figure class="shot">
+              <div class="shot-media">
+                <img src="assets/screens/notes-library.jpg" width="750" height="1000"
+                     alt="Noteora on iPad showing a typed note titled Untitled open in the editor with formatting toolbar."
+                     decoding="async">
+              </div>
+              <figcaption>
+                <h3>One library for everything you write</h3>
+                <p>Typed documents and handwritten pages live side by side in the same place. Open the app and start writing — there is no sign-up, no setup screen, and nothing to sync.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="shot">
+              <div class="shot-media">
+                <img src="assets/screens/handwriting.jpg" width="750" height="1000" loading="lazy"
+                     alt="A handwritten note in Noteora with a coloured flower sketch on grid paper and the pen toolbar visible."
+                     decoding="async">
+              </div>
+              <figcaption>
+                <h3>Handwriting that behaves like paper</h3>
+                <p>Pressure-sensitive strokes, a highlighter, and an eraser that do exactly what you expect. Choose lined, grid, dotted, Cornell, or plain paper underneath, in portrait or landscape.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="shot">
+              <div class="shot-media">
+                <img src="assets/screens/rich-text.jpg" width="750" height="1000" loading="lazy"
+                     alt="The Noteora rich text toolbar with heading, list, quote, code, alignment and font size controls above a document page."
+                     decoding="async">
+              </div>
+              <figcaption>
+                <h3>A real editor, not a text box</h3>
+                <p>Headings, checklists, quotes, code blocks, alignment, links, images, and nine fonts — all laid out on a true A4 page, so what you write is already shaped like the document you'll send.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="shot">
+              <div class="shot-media">
+                <img src="assets/screens/folders.jpg" width="750" height="1000" loading="lazy"
+                     alt="Noteora library view with a folder sidebar showing All Notes, Favorites and Trash next to a grid of note previews."
+                     decoding="async">
+              </div>
+              <figcaption>
+                <h3>Structure that grows with you</h3>
+                <p>Nested folders, favorites, and a trash you can recover from, plus full-text search and a density slider so a hundred notes stay as easy to scan as five.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="shot">
+              <div class="shot-media">
+                <img src="assets/screens/pdf-export.jpg" width="750" height="1000" loading="lazy"
+                     alt="Noteora editor with the Pages side panel open, showing page thumbnails and an Add Page button before exporting."
+                     decoding="async">
+              </div>
+              <figcaption>
+                <h3>Finished documents in one tap</h3>
+                <p>Reorder, add, or select pages in the side panel, then export the whole note or just the pages you picked. The PDF matches the screen exactly — margins, spacing, and ink included.</p>
+              </figcaption>
+            </figure>
+
+          </div>
+
+          <div class="shots-nav">
+            <button class="shots-btn" type="button" data-shots-prev aria-label="Previous screenshot">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.5 5.5 8 12l6.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button class="shots-btn" type="button" data-shots-next aria-label="Next screenshot">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.5 5.5 16 12l-6.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ============================== TRUST BAR ============================== -->
     <section class="trust-bar">
       <div class="container trust-grid">
@@ -149,8 +240,8 @@
         </div>
         <div class="trust-item">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12.5 11 14.5 15.5 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 12a7.5 7.5 0 1 1 15 0 7.5 7.5 0 0 1-15 0Z" stroke="currentColor" stroke-width="1.6"/></svg>
-          <div class="t">No Cookies, Anywhere</div>
-          <div class="s">Not in the app, not on this website</div>
+          <div class="t">No Tracking In The App</div>
+          <div class="s">No analytics or ad SDKs are bundled</div>
         </div>
       </div>
     </section>
@@ -358,7 +449,9 @@
               Noteora stores everything locally on your device using on-device storage only.
               There's no account, no cloud sync, and no server that ever sees your notes.
               Lock any note or folder with its own PIN for an extra layer of protection.
-              This website works the same way — no cookies, no analytics, no tracking.
+              The app itself contains no analytics or advertising SDKs. This website only
+              measures anonymous visits with Google Analytics if you accept it when asked —
+              and it never sees anything from inside the app.
               Read the full <a href="privacy.html" style="color: var(--color-primary); text-decoration: underline;">Privacy Policy</a>.
             </p>
           </div>
@@ -373,7 +466,7 @@
         <h2>Your notebook, reinvented.</h2>
         <p class="section-sub">Free to download. No account required. Available on the App Store.</p>
         <div class="hero-actions">
-          <a class="store-badge" href="#" aria-label="Download Noteora on the App Store">
+          <a class="store-badge" href="https://apps.apple.com/us/app/noteora-notes-handwriting/id6770675530" target="_blank" rel="noopener noreferrer" aria-label="Download Noteora on the App Store">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.983 3.935-.983 1.831 0 2.35.983 3.96.955 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zm3.593-3.257c.837-1.013 1.4-2.427 1.245-3.831-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.336-1.273 3.714 1.338.104 2.715-.688 3.559-1.701z"/>
             </svg>
@@ -409,9 +502,10 @@
           <div class="footer-col">
             <h4>Product</h4>
             <ul>
+              <li><a href="#showcase">Screens</a></li>
               <li><a href="#features">Features</a></li>
               <li><a href="#privacy">Privacy first</a></li>
-              <li><a href="#download">Download</a></li>
+              <li><a href="https://apps.apple.com/us/app/noteora-notes-handwriting/id6770675530" target="_blank" rel="noopener noreferrer">Download</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -419,6 +513,7 @@
             <ul>
               <li><a href="privacy.html">Privacy Policy</a></li>
               <li><a href="terms.html">Terms of Service</a></li>
+              <li><a href="#cookie-banner" data-cookie-settings>Cookie settings</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -432,10 +527,31 @@
 
       <div class="footer-bottom">
         <span>&copy; <span id="year">2026</span> Noteora. All rights reserved.</span>
-        <span>No cookies. No tracking. No account required.</span>
+        <span>No account required. Your notes never leave your device.</span>
       </div>
     </div>
   </footer>
+
+
+  <!-- ============================== COOKIE BANNER ============================== -->
+  <div class="cookie-banner" id="cookie-banner" data-cookie-banner role="dialog"
+       aria-labelledby="cookie-banner-title" aria-describedby="cookie-banner-text" hidden>
+    <div class="cookie-inner">
+      <div class="cookie-copy">
+        <h2 id="cookie-banner-title">Analytics cookies</h2>
+        <p id="cookie-banner-text">
+          We'd like to use Google Analytics cookies to count anonymous visits to this website,
+          so we can see which pages are useful. Nothing from inside the Noteora app is ever
+          measured. Decline and the site works exactly the same.
+          <a href="privacy.html#cookies">Learn more</a>
+        </p>
+      </div>
+      <div class="cookie-actions">
+        <button class="btn btn-ghost" type="button" data-cookie-decline>Decline</button>
+        <button class="btn btn-primary" type="button" data-cookie-accept>Accept</button>
+      </div>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>

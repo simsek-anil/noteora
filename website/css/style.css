@@ -472,6 +472,86 @@ h2 {
 .mock-card-2 .pin-copy .s { height: 7px; width: 45%; border-radius: 4px; background: var(--color-border); }
 
 /* ==========================================================================
+   Showcase — app screenshot rail
+   ========================================================================== */
+
+.showcase {
+  background: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
+}
+
+.shots { position: relative; }
+
+.shots-rail {
+  display: flex;
+  gap: var(--space-3);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 2px;
+  padding: 2px 2px var(--space-2);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+.shots-rail::-webkit-scrollbar { height: 6px; }
+.shots-rail::-webkit-scrollbar-track { background: transparent; }
+.shots-rail::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: var(--radius-pill); }
+.shots-rail:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 4px; border-radius: var(--radius-md); }
+
+.shot {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  margin: 0;
+}
+@media (max-width: 640px) {
+  .shot { flex-basis: min(78vw, 300px); }
+}
+
+.shot-media {
+  aspect-ratio: 3 / 4;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  overflow: hidden;
+  transition: border-color var(--duration) var(--ease);
+}
+.shot:hover .shot-media { border-color: var(--color-primary); }
+.shot-media img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+
+.shot figcaption { padding: var(--space-2) 2px 0; }
+.shot figcaption h3 {
+  font-size: var(--fs-base);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.35rem;
+}
+.shot figcaption p {
+  font-size: var(--fs-sm);
+  color: var(--color-fg-muted);
+}
+
+.shots-nav {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+}
+.shots-btn {
+  width: 44px; height: 44px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-fg);
+  cursor: pointer;
+  transition: border-color var(--duration) var(--ease), color var(--duration) var(--ease), opacity var(--duration) var(--ease), transform var(--duration) var(--ease);
+}
+.shots-btn svg { width: 22px; height: 22px; }
+.shots-btn:hover:not(:disabled) { border-color: var(--color-primary); color: var(--color-primary); }
+.shots-btn:active:not(:disabled) { transform: scale(0.94); }
+.shots-btn:disabled { opacity: 0.4; cursor: default; }
+
+/* ==========================================================================
    Trust bar
    ========================================================================== */
 
@@ -667,6 +747,64 @@ h2 {
   gap: var(--space-2);
   font-size: 0.8rem;
   color: var(--color-fg-muted);
+}
+
+/* ==========================================================================
+   Cookie consent banner
+   ========================================================================== */
+
+.cookie-banner {
+  position: fixed;
+  left: 0; right: 0;
+  bottom: 0;
+  z-index: 100;
+  padding: var(--space-2);
+  padding-bottom: calc(var(--space-2) + env(safe-area-inset-bottom, 0px));
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity var(--duration) var(--ease), transform var(--duration) var(--ease);
+}
+.cookie-banner.is-visible { opacity: 1; transform: translateY(0); }
+
+.cookie-inner {
+  max-width: var(--container);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+@media (max-width: 768px) {
+  .cookie-inner { flex-direction: column; align-items: stretch; gap: var(--space-2); }
+}
+
+.cookie-copy { flex: 1; min-width: 0; }
+.cookie-copy h2 {
+  font-size: var(--fs-base);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.25rem;
+}
+.cookie-copy p {
+  font-size: var(--fs-sm);
+  color: var(--color-fg-muted);
+  max-width: 68ch;
+}
+.cookie-copy a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cookie-actions {
+  display: flex;
+  gap: var(--space-1);
+  flex-shrink: 0;
+}
+.cookie-actions .btn { min-height: 44px; white-space: nowrap; }
+@media (max-width: 768px) {
+  .cookie-actions .btn { flex: 1; justify-content: center; }
 }
 
 /* ==========================================================================
