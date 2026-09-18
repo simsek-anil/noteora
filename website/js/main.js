@@ -50,11 +50,25 @@
       navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
+    function closeNav(returnFocus) {
+      if (!document.body.classList.contains('nav-open')) return;
+      document.body.classList.remove('nav-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      if (returnFocus) navToggle.focus();
+    }
+
     document.querySelectorAll('.nav-links a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        document.body.classList.remove('nav-open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', function () { closeNav(false); });
+    });
+
+    /* The open panel covers the screen, so Escape must get you back out. */
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeNav(true);
+    });
+
+    /* A resize past the mobile breakpoint leaves the panel stranded open. */
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 768) closeNav(false);
     });
   }
 
